@@ -152,7 +152,8 @@ open class SimplePDF {
             paragraphStyle.alignment = .right
         }
         
-        let attributes: [NSAttributedStringKey: Any] = [
+        // Change for Swift 4.2 (NSAttributedStringKey)
+        let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
             .foregroundColor: textColor,
             .paragraphStyle: paragraphStyle
@@ -438,7 +439,8 @@ open class SimplePDF {
         
         let skew = 0.0
         
-        let attributes: [NSAttributedStringKey: Any] = [
+        // Change for Swift 4.2 (NSAttributedStringKey)
+        let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: textColor,
             .paragraphStyle: paraStyle,
             .obliqueness: skew,
