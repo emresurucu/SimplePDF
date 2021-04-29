@@ -247,8 +247,13 @@ open class SimplePDF {
         
         /* calculate the aspect size of image */
         
-        let maxWidth = min( image.size.width, pageBounds.width )
-        let maxHeight = min( image.size.height, pageBounds.height - currentOffset.y )
+        // let maxWidth = min( image.size.width, pageBounds.width )
+        // let maxHeight = min( image.size.height, pageBounds.height - currentOffset.y )
+        
+        // Fixed by emresurucu
+        // Fixed page margins problem in drawImage
+        let maxWidth = min( image.size.width, pageBounds.width - pageMarginLeft - pageMarginRight)
+        let maxHeight = min( image.size.height, pageBounds.height - pageMarginBottom - currentOffset.y )
         
         let wFactor = image.size.width / maxWidth
         let hFactor = image.size.height / maxHeight
